@@ -11,5 +11,13 @@
 
 Console.WriteLine ("Введите число ");
 int num = Convert.ToInt32 (Console.ReadLine());
-Console.WriteLine(num>99 ? num.ToString()[2] : $"В числе {num}-> нет третьей цифры"); //Если num>99 то переводим его в строчный тип и выводим 3-й элемент массива (строки), иначе выводим сообщение что третьей цифры в числе нет
+if (num > 99)  
+{
+    int num2 = num;
+    while (num2 > 999) num2 = num2 / 10;
+    int result = num2 % 10;
+    Console.WriteLine ($"Третья цифра числа {num} -> {result}");
+}
+else Console.WriteLine ($"В числе {num} -> третьей цыфры нет");
+
 
